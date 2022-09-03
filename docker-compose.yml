@@ -1,0 +1,27 @@
+---
+version: '3'
+services:
+  mongodb:
+    image: mongo:5
+    volumes:
+    - "./data/mongo:/data/db"
+    env_file:
+    - sample.env
+    - keys.env
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 5081:8081
+    env_file:
+    - sample.env
+    - keys.env
+  api:
+    build: ./api
+    ports:
+    - "5000:5000"
+    #volumes:
+    #- "./api:/opt/app/"
+    env_file:
+    - sample.env
+    - keys.env

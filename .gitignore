@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# repo-specific foo
+data/mongo/
+!data/mongo/.emptyfile
+lorawan
+sample_json.txt
+keys.env
